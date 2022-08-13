@@ -5,6 +5,24 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "name": "Азат",
+      "email": "galiullin651@gmail.com",
+      "password": "Galiullin199612",
+      "id": "hd48zol6rv959m"
+    },
+    {
+      "name": "ЛяляТапаля",
+      "email": "kukushka@mail.ru",
+      "password": "kuku",
+      "id": "hd479sl6rwudrg"
+    },
+    {
+      "name": "ЛяляТапаdля",
+      "email": "kudkushka@mail.ru",
+      "password": "kuku",
+      "id": "hd4dykl6rwxzmv"
     }
   ],
   "accounts": [

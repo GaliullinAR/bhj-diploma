@@ -44,7 +44,7 @@ class Sidebar {
         const current = e.currentTarget;
         if (current.classList.contains('menu-item_login')) {
           App.getModal('login').open();
-        } else if (current.clasList.contains('menu-item_register')) {
+        } else if (current.classList.contains('menu-item_register')) {
           App.getModal('register').open();
         } else if (current.classList.contains('menu-item_logout')) {
           User.logout(
@@ -54,6 +54,7 @@ class Sidebar {
               }
             }
           )
+          App.setState('init');
         }
       }
     }
