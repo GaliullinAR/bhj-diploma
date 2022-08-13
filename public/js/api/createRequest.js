@@ -6,27 +6,31 @@ const createRequest = (options = {}) => {
   const { url, data, method, callback } = options;
   const xhr = new XMLHttpRequest();
   xhr.responseType = 'json';
+  xhr.withCredentials = true;
   const formData = new FormData();
   
   try {
-    if (method === "GET") {
-      xhr.open(method, setFullURL(data, url));
-      xhr.send();
-    } else {
-      formData.append(getKeys(data, data.mail), data.mail);
-      formData.append(getKeys(data, data.password), data.password);
+    xhr.open(method, url);
 
-      xhr.send(formData);
-    }
-  } catch (err) {
-    callback(err);
+  } catch (e) {
+    console.log(e);
   }
-  
-  xhr.addEventListener('load', function () {
+
+  if (method === 'GET') {
+    xhr.send()
+  } else {
+    for (let item in data) {
+      formData.append(item, data[item]);
+    }
+    xhr.send(formData);
+  }
+
+  xhr.onload = function () {
     callback(null, xhr.response);
-  });
-  
-  
+  }  
+  xhr.onerror = function () {
+    callback(xhr.statusText, null); 
+  }
 };
 
 function setFullURL(data = {}, url) {
@@ -37,19 +41,6 @@ function setFullURL(data = {}, url) {
   return fullURL.substring(0, fullURL.length - 1);
 }
 
-function getKeys(obj, value) {
-  return Object.keys(obj).find(key => obj[key] === value);
-}
 
 
-createRequest({
-  url: "https://example.com",
-  data: {
-    mail: 'galiullin',
-    password: 'oneone'
-  },
-  method: "GET",
-  callback: (err, response) => {
-    console.log(err);
-  }  
-});
+
