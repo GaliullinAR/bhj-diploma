@@ -17,6 +17,7 @@ class AsyncForm {
       throw new Error(`Не передан агрумент ${element}`);
     }
     this.element = element;
+    
     this.registerEvents();
   }
 
@@ -25,6 +26,7 @@ class AsyncForm {
    * вызывает метод submit()
    * */
   registerEvents() {
+    
     this.element.addEventListener('submit', (e) => {
       e.preventDefault();
       this.submit();

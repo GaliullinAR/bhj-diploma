@@ -8,7 +8,12 @@ class CreateTransactionForm extends AsyncForm {
    * метод renderAccountsList
    * */
   constructor(element) {
+    if (!element) {
+      throw new Error(`Нe передан аргумент ${element}`);
+    }
+    
     super(element)
+    this.renderAccountsList()
   }
 
   /**

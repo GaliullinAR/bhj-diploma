@@ -23,6 +23,30 @@
       "email": "kudkushka@mail.ru",
       "password": "kuku",
       "id": "hd4dykl6rwxzmv"
+    },
+    {
+      "name": "kukushka",
+      "email": "az.galiullin2012@yandex.ru",
+      "password": "kuku",
+      "id": "hd4co4l6tf725v"
+    },
+    {
+      "name": "kiska",
+      "email": "kiska@kiska",
+      "password": "kiska",
+      "id": "hd4998l6tfj61g"
+    },
+    {
+      "name": "rediska",
+      "email": "rediska@rediska",
+      "password": "rediska",
+      "id": "hd47kol6tfkbft"
+    },
+    {
+      "name": "rediskaa",
+      "email": "rediskaa@rediskaa",
+      "password": "rediskaa",
+      "id": "hd492gl6tfsij4"
     }
   ],
   "accounts": [
@@ -40,6 +64,11 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Кошелек",
+      "user_id": "hd48zol6rv959m",
+      "id": "hd4dbcl6tiv12v"
     }
   ],
   "transactions": [
