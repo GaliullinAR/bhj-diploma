@@ -25,11 +25,10 @@ class Modal {
    * (с помощью метода Modal.onClose)
    * */
   registerEvents() {
-    const modal = document.querySelectorAll('[data-dismiss="modal"]');
-    const isThis = this;
-    for (let item of modal) {
-      item, onclick = function (e) {
-        isThis.onClose(e);
+    const modal = this.element.querySelectorAll('[data-dismiss="modal"]');
+    for (const item of modal) {
+      item.onclick = (e) => {
+        this.onClose(e);
       }
     }
   }
@@ -52,9 +51,10 @@ class Modal {
   /**
    * Закрывает окно: удаляет CSS-свойство display
    * */
-  close(){
+  close() {
     this.element.style.display = 'none';
   }
 }
   
+
 
