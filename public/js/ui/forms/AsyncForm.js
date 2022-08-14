@@ -49,7 +49,7 @@ class AsyncForm {
     return data;
   }
 
-  onSubmit(options){
+  onSubmit(options) {
     console.log(options);
   }
 

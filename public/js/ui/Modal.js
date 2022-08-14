@@ -12,12 +12,11 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(element){
-    if (element) {
-      this.element = element;
-      this.registerEvents();
-    } else {
+    if (!element) {
       throw new Error(`Не передан аргумент ${element}`);
     }
+    this.element = element;
+    this.registerEvents();
   }
 
   /**
@@ -27,12 +26,12 @@ class Modal {
    * */
   registerEvents() {
     const modal = document.querySelectorAll('[data-dismiss="modal"]');
-    const onModal = Array.from(modal);
-    onModal.forEach((item) => {
-      item.onclick = (e) => {
-        this.onClose(e);
+    const isThis = this;
+    for (let item of modal) {
+      item, onclick = function (e) {
+        isThis.onClose(e);
       }
-    })
+    }
   }
 
   /**
