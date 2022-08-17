@@ -17,7 +17,6 @@ class AsyncForm {
       throw new Error(`Не передан агрумент ${element}`);
     }
     this.element = element;
-    
     this.registerEvents();
   }
 

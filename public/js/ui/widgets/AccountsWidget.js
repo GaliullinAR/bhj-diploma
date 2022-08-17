@@ -84,11 +84,11 @@ class AccountsWidget {
    * */
   onSelectAccount(element) {
     this.element.querySelectorAll('.active').forEach((item) => {
-      item.classList.remove('.active');
+      item.classList.remove('active');
     });
 
     element.classList.add('active');
-    App.showPage('transaction', {account_id: element.dataset.id})
+    App.showPage('transactions', {account_id: element.dataset.id})
   }
 
   /**
